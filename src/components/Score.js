@@ -38,12 +38,11 @@ const Score = () => {
           <div onClick={() => reset()}>Reset</div>
         </button>
 
-        <div className="align-middle">
+        <div className="items-center">
           {
-            scorePercentage < 50 ? <img alt="Sad mickey" src="sad.png" className="h-72 m-5" /> :
-              ((scorePercentage >= 50 && scorePercentage < 80) ? <img alt="happy mickey" src="medium.png" className="h-72 m-5" /> : <img alt="super happy mickey" src="happy.png" className="h-72 m-5" />)
+            scorePercentage < 50 ? <img alt="Sad mickey" src="sad.png" className="h-72 ml-10 mr-5 my-5 " /> :
+              ((scorePercentage >= 50 && scorePercentage < 80) ? <img alt="happy mickey" src="medium.png" className="h-72 ml-10 mr-5 my-5 " /> : <img alt="super happy mickey" src="happy.png" className="h-72 ml-12 mr-5 my-5 " />)
           }
-
         </div>
 
       </div>

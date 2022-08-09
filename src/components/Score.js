@@ -17,8 +17,8 @@ const Score = () => {
   const score = useSelector(state => state.score)
   const count = useSelector(state => state.questionCount)
   const scorePercentage = (score / count) * 100;
-  const opentdb = require('opentdb-api');
   const reset = () => {
+    const opentdb = require('opentdb-api');
     dispatch(resetScoreItem());
     dispatch(resetCountItem());
     opentdb.resetToken(token);

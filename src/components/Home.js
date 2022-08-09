@@ -12,19 +12,13 @@ const Home = () => {
     const [difficulty, setdifficulty] = useState("hard")
     const [category, setcategory] = useState('any')
     const opentdb = require('opentdb-api');
-    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        if (loading) {
-            window.location.reload();
-        } else {
-            console.log('page already loaded');
-        }
         opentdb.getToken().then(newToken => {
             localStorage.setItem('token', newToken);
         });
         settoken(localStorage.getItem('token'));
-    }, [loading])
+    }, [])
 
     const setreduxtoken = () => {
         dispatch(createToken(token))

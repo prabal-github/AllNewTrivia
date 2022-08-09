@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { React, useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { increaseScore, increaseQuestionCount } from "../state/action-creators";
 
 const Questions = () => {
@@ -11,10 +11,10 @@ const Questions = () => {
     // const [newoptions, setnewoptions] = useState()
     const [selectedOption, setselectedOption] = useState("")
     const [showAnswer, setshowAnswer] = useState(false)
-    const opentdb = require('opentdb-api');
     const [optns, setoptns] = useState([])
-
+    
     useEffect(() => {
+        const opentdb = require('opentdb-api');
         const token = localStorage.getItem('token')
         const difficulty = localStorage.getItem('difficulty')
         const category = localStorage.getItem('category')
